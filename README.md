@@ -9,13 +9,13 @@ The following combinations have been tested at least once and should "just work"
 | OS      | Compiler                     | Target      |
 | ------- | ---------------------------- | ----------- |
 | macOS   | built-in (clang-1001.0.46.4) | macOS       |
+| Linux   | gcc (9.3.0)                  | Linux       |
 
 In the following days I'll be testing the following and (hopefully) update the
 table above.
 
 | OS      | Compiler                     | Target      |
 | ------- | ---------------------------- | ----------- |
-| Linux   | gcc                          | Linux       |
 | Linux   | x86_64-w64-mingw32-gcc       | Windows     |
 | Windows | gcc (mingw)                  | Windows     |
 

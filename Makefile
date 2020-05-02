@@ -28,7 +28,7 @@ endif
 ENGINE_PATH = $(LIB_DIR)/$(ENGINE)
 
 ifneq ($(ARCH),MINGW)
-	LIBS += -lc++ -ldl -lm
+	LIBS += -ldl -lm
 endif
 ifeq ($(ARCH),MINGW)
 	LIBS += -L/mingw64/lib
