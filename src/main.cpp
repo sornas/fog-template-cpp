@@ -10,7 +10,7 @@ struct GamePlayer {
 
 struct GamePlayer player;
 
-void game_update() {
+void update() {
     f32 delta = fog_logic_delta();
 
     if (fog_input_down(NAME(UP), P1))
@@ -27,7 +27,7 @@ void game_update() {
         // player.position = fog_add_v2(player.position, fog_V2(+player.speed*delta, 0));
 }
 
-void game_draw() {
+void draw() {
     fog_renderer_push_point(1, player.position, fog_V4(1, 0, 0, 1), 0.1);
 }
 
@@ -50,6 +50,6 @@ int main(int argc, char **argv) {
         2.0f,
     };
 
-    fog_run(game_update, game_draw);
+    fog_run(update, draw);
     return 0;
 }
