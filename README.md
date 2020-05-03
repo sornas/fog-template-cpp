@@ -8,9 +8,9 @@ The following combinations have been tested at least once and should "just work"
 
 | OS      | Compiler                      | Target      |
 | ------- | ----------------------------- | ----------- |
-| macOS   | built-in (clang-1001.0.46.4)  | macOS       |
 | Linux   | gcc (9.3.0)                   | Linux       |
 | Linux   | x86\_64-w64-mingw32-gcc       | Windows [1] |
+| macOS   | built-in (clang-1001.0.46.4)  | macOS       |
 
 \[1]: MinGW is not required to run a Windows-executable compiled on Linux.
 
