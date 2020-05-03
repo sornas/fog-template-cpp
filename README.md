@@ -6,22 +6,26 @@ This is a template repository for creating games with
 # Compatability
 The following combinations have been tested at least once and should "just work":tm:.
 
+| OS      | Compiler                      | Target      |
+| ------- | ----------------------------- | ----------- |
+| macOS   | built-in (clang-1001.0.46.4)  | macOS       |
+| Linux   | gcc (9.3.0)                   | Linux       |
+| Linux   | x86\_64-w64-mingw32-gcc       | Windows [1] |
+
+\[1]: MinGW is not required to run a Windows-executable compiled on Linux.
+
+In the following days I'll be testing the following and will (hopefully) be able
+to update the table above.
+
 | OS      | Compiler                     | Target      |
 | ------- | ---------------------------- | ----------- |
-| macOS   | built-in (clang-1001.0.46.4) | macOS       |
-| Linux   | gcc (9.3.0)                  | Linux       |
-
-In the following days I'll be testing the following and (hopefully) update the
-table above.
-
-| OS      | Compiler                     | Target      |
-| ------- | ---------------------------- | ----------- |
-| Linux   | x86_64-w64-mingw32-gcc       | Windows     |
 | Windows | gcc (mingw)                  | Windows     |
 
 # Prerequisites
 
-## Linux and Mac (TBD)
+- Python 3 (3.3 and lower not supported)
+
+## Linux and Mac
 
 - A compiler for C++
 - SDL2, preferably from your package manager. I personally get SDL2 from
@@ -67,9 +71,8 @@ creating a copy of a template repository.
 
 A few compromises had do be done when implementing the C-bindings.
 
-The built-in engine documentation (`make -C fog doc && xdg-open
-fog/tools/doc.html`) is still available (also [hosted
-externally](https://fog.xn--srns-noa9h.se)).
+The built-in engine documentation (`fog/tools/doc.html`) is still available
+(also [hosted externally](https://fog.xn--srns-noa9h.se)).
 
 Particle systems, which used to be classes, now need to be passed
 as the first parameter to their methods. `void ParticleSystem::spawn(u32
