@@ -47,7 +47,7 @@ default: all
 all: game
 
 game: $(GAME)
-$(GAME): $(ENGINE_PATH) $(INC_DIR)/fog.h $(OBJECTS) $(ASSET_FILE)
+$(GAME): $(ENGINE_PATH) $(OBJECTS) $(ASSET_FILE)
 	$(CXX) $(DEBUG_FLAGS) $(OBJECTS) -o $@ -L$(LIB_DIR) $(LIBS)
 
 .PHONY: run
@@ -63,13 +63,10 @@ debug: $(GAME)
 
 .PHONY: engine
 engine: $(ENGINE_PATH)
-
 .NOTPARALLEL: $(ENGINE_PATH)
-$(ENGINE_PATH): | $(LIB_DIR)
+$(ENGINE_PATH): | $(LIB_DIR) $(INC_DIR)
 	make -C $(FOG_DIR) engine ENGINE_LIBRARY_NAME=$(ENGINE) CXX=$(CXX)
 	cp $(FOG_DIR)/out/$(ENGINE) $(LIB_DIR)/
-
-$(INC_DIR)/fog.h: $(ENGINE_PATH) | $(INC_DIR)
 	cp $(FOG_DIR)/out/fog.h $(INC_DIR)/
 
 $(ASSET_BUILDER):
