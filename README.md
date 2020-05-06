@@ -67,6 +67,13 @@ engine during development (or have someone else implement a fix) it's easier to
 track and share these changes. Unfortunately Github doesn't add submodules when
 creating a copy of a template repository.
 
+## Examples
+
+The only real difference between bindings for C and C++ (that comes to bind) is
+the operator overloading for vectors. This means that mostly everything from the
+[examples in the C-repo](https://github.com/sornas/fog-template-c#examples)
+applies here as well, so go take a look at them if you feel like it.
+
 ## Stuff to keep in mind
 
 A few compromises had do be done when implementing the C-bindings.
